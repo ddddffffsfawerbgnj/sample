@@ -29,10 +29,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-                    .authorizeRequests()
-                        .antMatchers("/**/signup", "/**/signin").permitAll()
+                .authorizeRequests()
+                .antMatchers("/**/signup", "/**/signin").permitAll()
                 .and()
-                    .addFilterBefore(this.authenticationFilter, UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(this.authenticationFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
     @Override
